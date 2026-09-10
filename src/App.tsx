@@ -31,14 +31,14 @@ function Header() {
     <button type="button" className="menu-button" onClick={() => setOpen(!open)} aria-label="Toggle navigation">{open ? <X /> : <Menu />}</button>
     <nav className={open ? 'nav open' : 'nav'}>
       {nav.map(([label, href]) => <a key={href} className={pathname===href?'active':''} href={`#${href}`} onClick={() => setOpen(false)}>{label}</a>)}
-      <a className="nav-github" href={site.github} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}><Github size={16}/> GitHub</a>
+      <a className="nav-github" href={site.github} onClick={() => setOpen(false)}><Github size={16}/> GitHub</a>
     </nav>
   </header>
 }
 
 function Footer() {
   const { site } = usePortfolio()
-  return <footer><div><strong>王思問 · Ssu-Wen Wang</strong><p>FinTech · Machine Learning · Applied Research</p></div><div className="footer-links"><a href={site.github} target="_blank" rel="noreferrer"><Github size={18}/> GitHub</a><a href="#/contact"><Mail size={18}/> Contact</a></div><span>© 2026</span></footer>
+  return <footer><div><strong>王思問 · Ssu-Wen Wang</strong><p>FinTech · Machine Learning · Applied Research</p></div><div className="footer-links"><a href={site.github}><Github size={18}/> GitHub</a><a href="#/contact"><Mail size={18}/> Contact</a></div><span>© 2026</span></footer>
 }
 
 function Layout({ children }: { children: React.ReactNode }) {
@@ -151,7 +151,7 @@ function Awards() {
 
 function Contact() {
   const { site } = usePortfolio()
-  return <Layout><section className="contact-page"><p className="kicker">Contact · 06</p><h1>Let’s build something<br/><em>worth explaining.</em></h1><p>I’m open to research opportunities, fintech collaborations, and conversations about turning analytical ideas into useful products.</p><div className="contact-links">{site.email&&<a href={`mailto:${site.email}`}><Mail/> {site.email}</a>}<a href={site.github} target="_blank" rel="noreferrer"><Github/> github.com/swenwang</a></div><p className="contact-note">Taipei & Hsinchu, Taiwan · Open to international opportunities</p></section></Layout>
+  return <Layout><section className="contact-page"><p className="kicker">Contact · 06</p><h1>Let’s build something<br/><em>worth explaining.</em></h1><p>I’m open to research opportunities, fintech collaborations, and conversations about turning analytical ideas into useful products.</p><div className="contact-links">{site.email&&<a href={`mailto:${site.email}`}><Mail/> {site.email}</a>}<a href={site.github}><Github/> github.com/swenwang</a></div><p className="contact-note">Taipei & Hsinchu, Taiwan · Open to international opportunities</p></section></Layout>
 }
 
 export default function App() {
