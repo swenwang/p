@@ -54,7 +54,7 @@ function Home() {
         <p className="hero-intro">{site.intro}</p>
         <div className="hero-actions"><ArrowLink to="/projects">Explore my work</ArrowLink><Link className="text-link" to="/about">More about me</Link></div>
       </div>
-      <figure className="hero-portrait"><img src="/images/profile.jpeg" alt="Ssu-Wen Wang"/><figcaption><span>Management Science</span><span>Computer Science</span></figcaption></figure>
+      <figure className="hero-portrait"><img src="./images/profile.jpeg" alt="Ssu-Wen Wang"/><figcaption><span>Management Science</span><span>Computer Science</span></figcaption></figure>
       <div className="hero-note">Curious about the space between a good model and a useful product.</div>
     </section>
 
@@ -73,7 +73,7 @@ function Home() {
 
     <section className="section home-award">
       <div><p className="kicker">Recent recognition · 03</p><h2>MicroChain</h2><p>Excellence Award, FinTech Division</p><ArrowLink to="/awards">See recognition</ArrowLink></div>
-      <img src="/images/microchain-award.jpeg" alt="MicroChain Excellence Award"/>
+      <img src="./images/microchain-award.jpeg" alt="MicroChain Excellence Award"/>
     </section>
   </Layout>
 }
@@ -93,7 +93,7 @@ function PageIntro({ eyebrow, title, text }: { eyebrow: string; title: string; t
 function About() {
   const { skills } = usePortfolio()
   return <Layout><PageIntro eyebrow="About · 01" title="Business sense, technical curiosity." text="I’m Ssu-Wen — Mia to friends — a Management Science student building an interdisciplinary path across finance, computer science, and applied research."/>
-    <section className="about-grid section"><img src="/images/profile.jpeg" alt="Ssu-Wen Wang"/><div className="about-copy"><h2>I care about what happens after the idea.</h2><p>My work often begins with a financial or organizational problem, then moves through data, models, product decisions, and implementation. I’m especially interested in responsible AI in finance, computational finance, and technology that makes complex decisions more transparent.</p><p>At National Yang Ming Chiao Tung University, I study Management Science while expanding my computer science training through cross-university coursework at National Chengchi University.</p><p>Outside class, I lead and develop fintech projects, help build student organizations, tutor high-school Chinese, and keep learning how to ask better research questions.</p><div className="location">Taipei → Hsinchu → Canada, one day.</div></div></section>
+    <section className="about-grid section"><img src="./images/profile.jpeg" alt="Ssu-Wen Wang"/><div className="about-copy"><h2>I care about what happens after the idea.</h2><p>My work often begins with a financial or organizational problem, then moves through data, models, product decisions, and implementation. I’m especially interested in responsible AI in finance, computational finance, and technology that makes complex decisions more transparent.</p><p>At National Yang Ming Chiao Tung University, I study Management Science while expanding my computer science training through cross-university coursework at National Chengchi University.</p><p>Outside class, I lead and develop fintech projects, help build student organizations, tutor high-school Chinese, and keep learning how to ask better research questions.</p><div className="location">Taipei → Hsinchu → Canada, one day.</div></div></section>
     <section className="section skills-section"><div><p className="kicker">Working toolkit · 02</p><h2>Skills grow around the questions I want to answer.</h2></div><div className="skill-cloud">{skills.map((s,i)=><span className={`skill s${i%4}`} key={s}>{s}</span>)}</div></section>
   </Layout>
 }
