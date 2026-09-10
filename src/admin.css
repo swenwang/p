@@ -1,0 +1,13 @@
+.manager-actions{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.manager-actions button,.save-button{display:flex;align-items:center;gap:8px}
+.manager-actions button{border:0;background:var(--blue);color:white;padding:13px 18px;cursor:pointer}
+.entry-form{background:white;border:1px solid #d1d6d2;padding:28px;margin-bottom:22px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.entry-form label{display:grid;gap:8px;font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+.entry-form input,.entry-form textarea{padding:12px;border:1px solid #aeb6b1}.entry-form textarea{min-height:90px}
+.upload-label{border:1px dashed var(--blue);padding:16px;display:flex!important;flex-direction:row;align-items:center;cursor:pointer}.upload-label input{display:none}
+.upload-preview{height:130px;width:200px}
+.admin-rows{background:white;border:1px solid #d1d6d2}
+.admin-rows article{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:18px;padding:18px 20px;border-bottom:1px solid #e0e4e1}.admin-rows article:last-child{border:0}
+.admin-rows h3{margin:0 0 5px}.admin-rows p{margin:0;color:#687275;font-size:.85rem}.admin-rows button{border:0;background:none;cursor:pointer}
+.admin-rows button.published,.admin-rows button.hidden{border-radius:40px;padding:7px 11px;font-size:.72rem}.admin-rows button.published{background:#dce7d8;color:#425a3c}.admin-rows button.hidden{background:#e9e9e9;color:#666}
+@media(max-width:700px){.entry-form{grid-template-columns:1fr}.manager-actions{align-items:flex-start;gap:16px}.admin-rows article{grid-template-columns:1fr auto}.admin-rows article>button:last-child{grid-column:2}}
