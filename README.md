@@ -2,10 +2,6 @@
 
 A desktop-first, multi-page portfolio for FinTech, machine learning, and applied research. Built with React, Vite, TypeScript, and Supabase.
 
-## Live website
-
-[View Ssu-Wen Wang’s portfolio](https://ssu-wen-portfolio.wangssuwen588.chatgpt.site)
-
 ## Local development
 
 ```bash
