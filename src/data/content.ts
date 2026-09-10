@@ -6,14 +6,14 @@ export const site = {
   headline: 'FinTech, machine learning, and ideas built into practice.',
   intro: 'Management Science and Computer Science student exploring how data, financial systems, and responsible technology can solve real problems.',
   location: 'Taipei · Hsinchu · Open to Canada',
-  email: '',
+  email: 'wangssuwen588@gmail.com',
   github: 'https://github.com/swenwang',
   linkedin: '',
 }
 
 export const projects: Project[] = [
   {
-    slug: 'microchain-sme-financing',
+    slug: 'microchain-SME',
     title: 'MicroChain',
     eyebrow: 'SME Credit Scoring → Blockchain Financing',
     summary: 'An SME credit assessment proposal that advanced from the IDEA FinTech quarter-finals into an implemented and award-winning model.',
