@@ -12,6 +12,14 @@ export type Project = {
   cover: string
   gallery: string[]
   links?: { label: string; url: string }[]
+  phases?: {
+    step: string
+    title: string
+    subtitle: string
+    description: string
+    outcome: string
+    images: { src: string; alt: string }[]
+  }[]
   featured: boolean
 }
 
