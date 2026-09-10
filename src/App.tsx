@@ -16,7 +16,9 @@ const nav = [
 
 function ScrollTop() {
   const { pathname } = useLocation()
-  useEffect(() => window.scrollTo(0, 0), [pathname])
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
   return null
 }
 
@@ -25,7 +27,7 @@ function Header() {
   const { pathname } = useLocation()
   const { site } = usePortfolio()
   return <header className="site-header">
-    <a className="brand" href="#/" onClick={() => setOpen(false)}><span>SW</span> Ssu-Wen Wang</a>
+    <a className="brand" href="#/" onClick={() => setOpen(false)}><span>SW</span> 王思問 · Ssu-Wen Wang</a>
     <button type="button" className="menu-button" onClick={() => setOpen(!open)} aria-label="Toggle navigation">{open ? <X /> : <Menu />}</button>
     <nav className={open ? 'nav open' : 'nav'}>
       {nav.map(([label, href]) => <a key={href} className={pathname===href?'active':''} href={`#${href}`} onClick={() => setOpen(false)}>{label}</a>)}
@@ -36,7 +38,7 @@ function Header() {
 
 function Footer() {
   const { site } = usePortfolio()
-  return <footer><div><strong>Ssu-Wen Wang</strong><p>FinTech · Machine Learning · Applied Research</p></div><div className="footer-links"><a href={site.github} target="_blank" rel="noreferrer"><Github size={18}/> GitHub</a><a href="#/contact"><Mail size={18}/> Contact</a></div><span>© 2026</span></footer>
+  return <footer><div><strong>王思問 · Ssu-Wen Wang</strong><p>FinTech · Machine Learning · Applied Research</p></div><div className="footer-links"><a href={site.github} target="_blank" rel="noreferrer"><Github size={18}/> GitHub</a><a href="#/contact"><Mail size={18}/> Contact</a></div><span>© 2026</span></footer>
 }
 
 function Layout({ children }: { children: React.ReactNode }) {
@@ -52,12 +54,12 @@ function Home() {
   return <Layout>
     <section className="hero">
       <div className="hero-copy">
-        <p className="kicker">Hello, I’m Mia — based in Taiwan.</p>
+        <p className="kicker">Hello, I’m Ssu-Wen (Mia) — 王思問.</p>
         <h1>Ideas in finance,<br/><em>built</em> with technology.</h1>
         <p className="hero-intro">{site.intro}</p>
         <div className="hero-actions"><ArrowLink to="/projects">Explore my work</ArrowLink><a className="text-link" href="#/about">More about me</a></div>
       </div>
-      <figure className="hero-portrait"><img src="./images/profile.jpeg" alt="Ssu-Wen Wang"/><figcaption><span>Management Science</span><span>Computer Science</span></figcaption></figure>
+      <figure className="hero-portrait"><img src="./images/profile.jpeg" alt="王思問 Ssu-Wen Wang"/><figcaption><span>Management Science</span><span>Computer Science</span></figcaption></figure>
       <div className="hero-note">Curious about the space between a good model and a useful product.</div>
     </section>
 
@@ -95,8 +97,8 @@ function PageIntro({ eyebrow, title, text }: { eyebrow: string; title: string; t
 
 function About() {
   const { skills } = usePortfolio()
-  return <Layout><PageIntro eyebrow="About · 01" title="Business sense, technical curiosity." text="I’m Ssu-Wen — Mia to friends — a Management Science student building an interdisciplinary path across finance, computer science, and applied research."/>
-    <section className="about-grid section"><img src="./images/profile.jpeg" alt="Ssu-Wen Wang"/><div className="about-copy"><h2>I care about what happens after the idea.</h2><p>My work often begins with a financial or organizational problem, then moves through data, models, product decisions, and implementation. I’m especially interested in responsible AI in finance, computational finance, and technology that makes complex decisions more transparent.</p><p>At National Yang Ming Chiao Tung University, I study Management Science while expanding my computer science training through cross-university coursework at National Chengchi University.</p><p>Outside class, I lead and develop fintech projects, help build student organizations, tutor high-school Chinese, and keep learning how to ask better research questions.</p><div className="location">Taipei → Hsinchu → Canada, one day.</div></div></section>
+  return <Layout><PageIntro eyebrow="About · 01" title="Business sense, technical curiosity." text="I’m 王思問 — Ssu-Wen, or Mia to friends — a Management Science student building an interdisciplinary path across finance, computer science, and applied research."/>
+    <section className="about-grid section"><img src="./images/profile.jpeg" alt="王思問 Ssu-Wen Wang"/><div className="about-copy"><h2>I care about what happens after the idea.</h2><p>My work often begins with a financial or organizational problem, then moves through data, models, product decisions, and implementation. I’m especially interested in responsible AI in finance, computational finance, and technology that makes complex decisions more transparent.</p><p>At National Yang Ming Chiao Tung University, I study Management Science while expanding my computer science training through cross-university coursework at National Chengchi University.</p><p>Outside class, I lead and develop fintech projects, help build student organizations, tutor high-school Chinese, and keep learning how to ask better research questions.</p><div className="location">Taipei → Hsinchu → Canada, one day.</div></div></section>
     <section className="section skills-section"><div><p className="kicker">Working toolkit · 02</p><h2>Skills grow around the questions I want to answer.</h2></div><div className="skill-cloud">{skills.map((s,i)=><span className={`skill s${i%4}`} key={s}>{s}</span>)}</div></section>
   </Layout>
 }
