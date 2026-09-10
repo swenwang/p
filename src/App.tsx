@@ -110,11 +110,21 @@ function ProjectDetail() {
   return <Layout>
     <section className="project-hero"><p className="kicker">{p.eyebrow} · {p.year}</p><h1>{p.title}</h1><p>{p.summary}</p><div className="tags">{p.tags.map(t=><span key={t}>{t}</span>)}</div></section>
     <section className="project-cover"><img src={p.cover} alt={p.title}/></section>
+    {p.phases?.length&&<section className="section project-phases">
+      <div className="phase-intro"><p className="kicker">Project evolution</p><h2>From proposal<br/>to a trained model.</h2><p>One project, developed through two distinct stages.</p></div>
+      <div className="phase-list">{p.phases.map((phase, phaseIndex)=><article className="phase" key={phase.step}>
+        <header><div><span>{phase.step}</span><p>{phase.subtitle}</p></div><h3>{phase.title}</h3></header>
+        <div className={`phase-content ${phase.images.length===1?'single':''}`}>
+          <div className="phase-copy"><p>{phase.description}</p><strong>{phase.outcome}</strong></div>
+          <div className="phase-images">{phase.images.map((image,imageIndex)=><figure key={image.src}><img src={image.src} alt={image.alt}/><figcaption>0{phaseIndex+1}.{imageIndex+1}</figcaption></figure>)}</div>
+        </div>
+      </article>)}</div>
+    </section>}
     <section className="section project-body">
       <aside><div><small>ROLE</small><p>{p.role}</p></div>{p.result&&<div><small>RECOGNITION</small><p>{p.result}</p></div>}{p.links?.map(l=><a href={l.url} target="_blank" key={l.url}>{l.label}<ExternalLink size={16}/></a>)}</aside>
       <article>{p.description.map((d,i)=><p key={i}>{d}</p>)}<h2>How the work fits together</h2><ol className="hierarchy">{p.hierarchy.map((h,i)=><li key={h}><span>0{i+1}</span>{h}</li>)}</ol></article>
     </section>
-    {p.gallery.length>1&&<section className="section project-gallery">{p.gallery.map((img,i)=><img key={img} src={img} alt={`${p.title} project ${i+1}`}/>)}</section>}
+    {!p.phases?.length&&p.gallery.length>1&&<section className="section project-gallery">{p.gallery.map((img,i)=><img key={img} src={img} alt={`${p.title} project ${i+1}`}/>)}</section>}
   </Layout>
 }
 
