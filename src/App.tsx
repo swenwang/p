@@ -1,6 +1,6 @@
 import { ArrowRight, ExternalLink, Github, Mail, Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { Link, NavLink, Route, Routes, useLocation, useParams } from 'react-router-dom'
+import { Route, Routes, useLocation, useParams } from 'react-router-dom'
 import { usePortfolio } from './context/PortfolioContext'
 import type { Project } from './types'
 import AdminPage from './pages/AdminPage'
@@ -22,18 +22,21 @@ function ScrollTop() {
 
 function Header() {
   const [open, setOpen] = useState(false)
+  const { pathname } = useLocation()
+  const { site } = usePortfolio()
   return <header className="site-header">
-    <Link className="brand" to="/" onClick={() => setOpen(false)}><span>SW</span> Ssu-Wen Wang</Link>
-    <button className="menu-button" onClick={() => setOpen(!open)} aria-label="Toggle navigation">{open ? <X /> : <Menu />}</button>
+    <a className="brand" href="#/" onClick={() => setOpen(false)}><span>SW</span> Ssu-Wen Wang</a>
+    <button type="button" className="menu-button" onClick={() => setOpen(!open)} aria-label="Toggle navigation">{open ? <X /> : <Menu />}</button>
     <nav className={open ? 'nav open' : 'nav'}>
-      {nav.map(([label, href]) => <NavLink key={href} to={href} onClick={() => setOpen(false)}>{label}</NavLink>)}
+      {nav.map(([label, href]) => <a key={href} className={pathname===href?'active':''} href={`#${href}`} onClick={() => setOpen(false)}>{label}</a>)}
+      <a className="nav-github" href={site.github} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}><Github size={16}/> GitHub</a>
     </nav>
   </header>
 }
 
 function Footer() {
   const { site } = usePortfolio()
-  return <footer><div><strong>Ssu-Wen Wang</strong><p>FinTech · Machine Learning · Applied Research</p></div><div className="footer-links"><a href={site.github} target="_blank"><Github size={18}/> GitHub</a><Link to="/contact"><Mail size={18}/> Contact</Link></div><span>© 2026</span></footer>
+  return <footer><div><strong>Ssu-Wen Wang</strong><p>FinTech · Machine Learning · Applied Research</p></div><div className="footer-links"><a href={site.github} target="_blank" rel="noreferrer"><Github size={18}/> GitHub</a><a href="#/contact"><Mail size={18}/> Contact</a></div><span>© 2026</span></footer>
 }
 
 function Layout({ children }: { children: React.ReactNode }) {
@@ -41,7 +44,7 @@ function Layout({ children }: { children: React.ReactNode }) {
 }
 
 function ArrowLink({ to, children }: { to: string; children: React.ReactNode }) {
-  return <Link className="arrow-link" to={to}>{children}<ArrowRight size={18}/></Link>
+  return <a className="arrow-link" href={`#${to}`}>{children}<ArrowRight size={18}/></a>
 }
 
 function Home() {
@@ -52,7 +55,7 @@ function Home() {
         <p className="kicker">Hello, I’m Mia — based in Taiwan.</p>
         <h1>Ideas in finance,<br/><em>built</em> with technology.</h1>
         <p className="hero-intro">{site.intro}</p>
-        <div className="hero-actions"><ArrowLink to="/projects">Explore my work</ArrowLink><Link className="text-link" to="/about">More about me</Link></div>
+        <div className="hero-actions"><ArrowLink to="/projects">Explore my work</ArrowLink><a className="text-link" href="#/about">More about me</a></div>
       </div>
       <figure className="hero-portrait"><img src="./images/profile.jpeg" alt="Ssu-Wen Wang"/><figcaption><span>Management Science</span><span>Computer Science</span></figcaption></figure>
       <div className="hero-note">Curious about the space between a good model and a useful product.</div>
@@ -79,11 +82,11 @@ function Home() {
 }
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
-  return <Link to={`/projects/${project.slug}`} className="project-card">
+  return <a href={`#/projects/${project.slug}`} className="project-card">
     <div className="project-image"><img src={project.cover} alt=""/><span>0{index + 1}</span></div>
     <div className="project-meta"><p>{project.eyebrow}</p><h3>{project.title}</h3><p>{project.summary}</p><div className="tags">{project.tags.slice(0, 4).map(t => <span key={t}>{t}</span>)}</div></div>
     <ArrowRight className="project-arrow"/>
-  </Link>
+  </a>
 }
 
 function PageIntro({ eyebrow, title, text }: { eyebrow: string; title: string; text: string }) {
@@ -121,7 +124,7 @@ function ProjectDetail() {
       </article>)}</div>
     </section>}
     <section className="section project-body">
-      <aside><div><small>ROLE</small><p>{p.role}</p></div>{p.result&&<div><small>RECOGNITION</small><p>{p.result}</p></div>}{p.links?.map(l=><a href={l.url} target="_blank" key={l.url}>{l.label}<ExternalLink size={16}/></a>)}</aside>
+      <aside><div><small>ROLE</small><p>{p.role}</p></div>{p.result&&<div><small>RECOGNITION</small><p>{p.result}</p></div>}{p.links?.map(l=><a href={l.url} target="_blank" rel="noreferrer" key={l.url}>{l.label}<ExternalLink size={16}/></a>)}</aside>
       <article>{p.description.map((d,i)=><p key={i}>{d}</p>)}<h2>How the work fits together</h2><ol className="hierarchy">{p.hierarchy.map((h,i)=><li key={h}><span>0{i+1}</span>{h}</li>)}</ol></article>
     </section>
     {!p.phases?.length&&p.gallery.length>1&&<section className="section project-gallery">{p.gallery.map((img,i)=><img key={img} src={img} alt={`${p.title} project ${i+1}`}/>)}</section>}
@@ -146,7 +149,7 @@ function Awards() {
 
 function Contact() {
   const { site } = usePortfolio()
-  return <Layout><section className="contact-page"><p className="kicker">Contact · 06</p><h1>Let’s build something<br/><em>worth explaining.</em></h1><p>I’m open to research opportunities, fintech collaborations, and conversations about turning analytical ideas into useful products.</p><div className="contact-links">{site.email&&<a href={`mailto:${site.email}`}><Mail/> {site.email}</a>}<a href={site.github} target="_blank"><Github/> github.com/swenwang</a></div><p className="contact-note">Taipei & Hsinchu, Taiwan · Open to international opportunities</p></section></Layout>
+  return <Layout><section className="contact-page"><p className="kicker">Contact · 06</p><h1>Let’s build something<br/><em>worth explaining.</em></h1><p>I’m open to research opportunities, fintech collaborations, and conversations about turning analytical ideas into useful products.</p><div className="contact-links">{site.email&&<a href={`mailto:${site.email}`}><Mail/> {site.email}</a>}<a href={site.github} target="_blank" rel="noreferrer"><Github/> github.com/swenwang</a></div><p className="contact-note">Taipei & Hsinchu, Taiwan · Open to international opportunities</p></section></Layout>
 }
 
 export default function App() {
