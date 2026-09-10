@@ -26,8 +26,8 @@ export const projects: Project[] = [
     result: 'IDEA FinTech Quarter-finalist · Excellence Award, FinTech Division',
     tags: ['FinTech', 'LightGBM', 'SHAP', 'Blockchain', 'Credit Risk'],
     hierarchy: ['FinTech', 'Credit Risk Assessment', 'SME Credit Scoring', 'LightGBM + SHAP', 'Alternative data → MicroChain prototype'],
-    cover: '/images/sme-presentation.jpeg',
-    gallery: ['/images/sme-presentation.jpeg', '/images/sme-team.jpeg', '/images/microchain-award.jpeg'],
+    cover: './images/sme-presentation.jpeg',
+    gallery: ['./images/sme-presentation.jpeg', './images/sme-team.jpeg', './images/microchain-award.jpeg'],
     featured: true,
   },
   {
@@ -43,8 +43,8 @@ export const projects: Project[] = [
     role: 'Team Member · Model and Product Development',
     tags: ['AWS', 'Generative AI', 'Computer Vision', 'PartyRock', 'Prototype'],
     hierarchy: ['Artificial Intelligence', 'Image Recognition', 'Advisory Application', 'Vision Model + Generative AI', '800+ images + PartyRock demo'],
-    cover: '/images/aws-team.jpeg',
-    gallery: ['/images/aws-team.jpeg', '/images/aws-working.jpeg'],
+    cover: './images/aws-team.jpeg',
+    gallery: ['./images/aws-team.jpeg', './images/aws-working.jpeg'],
     links: [{ label: 'Watch demo', url: 'https://youtu.be/1U7-pTY64E4' }],
     featured: true,
   },
@@ -61,7 +61,7 @@ export const projects: Project[] = [
     role: 'Independent Researcher',
     tags: ['Python', 'Anomaly Detection', 'Isolation Forest', 'BankSim', 'Research Design'],
     hierarchy: ['Machine Learning', 'Anomaly Detection', 'Financial Transactions', 'Isolation Forest', 'BankSim + behavioral features + evaluation'],
-    cover: '/images/profile.jpeg',
+    cover: './images/profile.jpeg',
     gallery: [],
     links: [{ label: 'View repository', url: 'https://github.com/swenwang/financial-anomaly-detector' }],
     featured: true,
@@ -76,16 +76,16 @@ export const experiences: Experience[] = [
 ]
 
 export const awards: Award[] = [
-  { title: 'Excellence Award, FinTech Division', issuer: 'The 3rd NYCU Smart Innovation and Interdisciplinary Talent Competition', date: 'December 2025', description: 'Awarded for MicroChain: Blockchain-Based Financing for Micro Enterprises.', image: '/images/microchain-award.jpeg' },
+  { title: 'Excellence Award, FinTech Division', issuer: 'The 3rd NYCU Smart Innovation and Interdisciplinary Talent Competition', date: 'December 2025', description: 'Awarded for MicroChain: Blockchain-Based Financing for Micro Enterprises.', image: './images/microchain-award.jpeg' },
   { title: 'Quarter-finalist', issuer: 'IDEA FinTech 2025', date: '2025', description: 'SME credit assessment using alternative data, LightGBM, SHAP, and regulatory considerations.' },
 ]
 
 export const gallery: GalleryItem[] = [
-  { src: '/images/aws-team.jpeg', alt: 'AWS hackathon team portrait', category: 'Competitions', caption: 'AWS Generative AI Hackathon · Team portrait', orientation: 'landscape' },
-  { src: '/images/aws-working.jpeg', alt: 'Team working at the AWS hackathon', category: 'Competitions', caption: 'Building together during the hackathon', orientation: 'landscape' },
-  { src: '/images/sme-presentation.jpeg', alt: 'Ssu-Wen presenting the SME fintech project', category: 'Projects', caption: 'Presenting our SME financing solution', orientation: 'portrait' },
-  { src: '/images/sme-team.jpeg', alt: 'SME fintech project team', category: 'Projects', caption: 'MicroChain project team', orientation: 'portrait' },
-  { src: '/images/microchain-award.jpeg', alt: 'MicroChain Excellence Award certificate', category: 'Awards', caption: 'Excellence Award · FinTech Division', orientation: 'portrait' },
+  { src: './images/aws-team.jpeg', alt: 'AWS hackathon team portrait', category: 'Competitions', caption: 'AWS Generative AI Hackathon · Team portrait', orientation: 'landscape' },
+  { src: './images/aws-working.jpeg', alt: 'Team working at the AWS hackathon', category: 'Competitions', caption: 'Building together during the hackathon', orientation: 'landscape' },
+  { src: './images/sme-presentation.jpeg', alt: 'Ssu-Wen presenting the SME fintech project', category: 'Projects', caption: 'Presenting our SME financing solution', orientation: 'portrait' },
+  { src: './images/sme-team.jpeg', alt: 'SME fintech project team', category: 'Projects', caption: 'MicroChain project team', orientation: 'portrait' },
+  { src: './images/microchain-award.jpeg', alt: 'MicroChain Excellence Award certificate', category: 'Awards', caption: 'Excellence Award · FinTech Division', orientation: 'portrait' },
 ]
 
 export const skills = ['Python', 'Machine Learning', 'SQL', 'React', 'TypeScript', 'Solidity', 'Git & GitHub', 'Financial Analysis', 'Research Design', 'Project Leadership']
