@@ -16,10 +16,10 @@ export const projects: Project[] = [
     slug: 'microchain-sme-financing',
     title: 'MicroChain',
     eyebrow: 'SME Credit Scoring → Blockchain Financing',
-    summary: 'An explainable SME credit assessment concept developed into a blockchain-based financing prototype for micro enterprises.',
+    summary: 'An SME credit assessment proposal that advanced from the IDEA FinTech quarter-finals into an implemented and award-winning model.',
     description: [
-      'The project began with a practical question: how can lenders evaluate smaller businesses when conventional financial records are limited? Our team proposed an alternative-data credit assessment approach using LightGBM and SHAP to balance predictive performance with explainability.',
-      'We later developed the idea into MicroChain, a working fintech application for micro-enterprise supply-chain financing. The project received an Excellence Award in the FinTech Division at NYCU’s 3rd Smart Innovation and Interdisciplinary Talent Competition.',
+      'MicroChain developed through two connected stages. We first proposed an alternative-data credit assessment framework for small and medium-sized enterprises and presented the concept in the IDEA FinTech quarter-finals.',
+      'We then moved beyond the proposal by preparing the data and training the credit-scoring model. This implementation became the working foundation of MicroChain and received an Excellence Award in the FinTech Division at NYCU’s 3rd Smart Innovation and Interdisciplinary Talent Competition.',
     ],
     year: '2025',
     role: 'Team Lead · Proposal Lead',
@@ -28,6 +28,29 @@ export const projects: Project[] = [
     hierarchy: ['FinTech', 'Credit Risk Assessment', 'SME Credit Scoring', 'LightGBM + SHAP', 'Alternative data → MicroChain prototype'],
     cover: './images/sme-presentation.jpeg',
     gallery: ['./images/sme-presentation.jpeg', './images/sme-team.jpeg', './images/microchain-award.jpeg'],
+    phases: [
+      {
+        step: 'Phase 01',
+        title: 'Proposal & Quarter-finals',
+        subtitle: 'IDEA FinTech 2025',
+        description: 'We framed the SME financing problem, designed an alternative-data credit assessment approach, and presented how LightGBM and SHAP could support both predictive performance and explainable lending decisions.',
+        outcome: 'Advanced to the quarter-finals',
+        images: [
+          { src: './images/sme-presentation.jpeg', alt: 'Ssu-Wen presenting the SME credit assessment proposal' },
+          { src: './images/sme-team.jpeg', alt: 'The SME credit assessment team at the IDEA FinTech quarter-finals' },
+        ],
+      },
+      {
+        step: 'Phase 02',
+        title: 'Model Implementation & Award',
+        subtitle: 'MicroChain',
+        description: 'We turned the proposal into practice by preparing the data and actually training the credit-scoring model. The implemented result became part of MicroChain, our micro-enterprise financing solution.',
+        outcome: 'Excellence Award · FinTech Division',
+        images: [
+          { src: './images/microchain-award.jpeg', alt: 'MicroChain Excellence Award certificate' },
+        ],
+      },
+    ],
     featured: true,
   },
   {
