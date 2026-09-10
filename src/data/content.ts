@@ -1,7 +1,7 @@
 import type { Award, Experience, GalleryItem, Project } from '../types'
 
 export const site = {
-  name: 'Ssu-Wen Wang',
+  name: '王思問 · Ssu-Wen Wang',
   nickname: 'Mia',
   headline: 'FinTech, machine learning, and ideas built into practice.',
   intro: 'Management Science and Computer Science student exploring how data, financial systems, and responsible technology can solve real problems.',
