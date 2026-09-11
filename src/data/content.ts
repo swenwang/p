@@ -93,6 +93,7 @@ export const experiences: Experience[] = [
   { title: 'Project Development Officer', organization: 'NCCU FinTech Innovation Lab', period: '2026 — Present', description: 'Supporting project development, organizational systems, and the lab’s website architecture.', type: 'Leadership' },
   { title: 'Team Lead & Proposal Lead', organization: 'IDEA FinTech 2025', period: '2025', description: 'Led an alternative-data SME credit scoring proposal and its later development into the award-winning MicroChain prototype.', type: 'Competition' },
   { title: 'B.B.A. in Management Science', organization: 'National Yang Ming Chiao Tung University', period: '2024 — 2028 (Expected)', description: 'Interdisciplinary study across management science, finance, data, and computer science.', type: 'Education' },
+  { title: 'Interdisciplinary Artificial Intelligence Program', organization: 'National Yang Ming Chiao Tung University', period: '2025 — Present', description: 'Currently pursuing interdisciplinary training in artificial intelligence, connecting machine learning and data-driven methods with applications beyond computer science.', type: 'Education' },
   { title: 'Cross-university Computer Science Study', organization: 'National Chengchi University', period: '2025 — Present', description: 'Coursework and project experience in computer science and financial technology.', type: 'Education' },
 ]
 
