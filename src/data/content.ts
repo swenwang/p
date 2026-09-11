@@ -74,25 +74,20 @@ export const projects: Project[] = [
   {
     slug: 'campus-token-dapp',
     title: 'Campus Token DApp',
-    eyebrow: 'Blockchain Attendance → Dual-Token Rewards',
-    summary: 'A Sepolia DApp that verifies classroom attendance, issues participation tokens, and converts them into a separate reward token on-chain.',
+    eyebrow: 'Blockchain Attendance & Rewards',
+    summary: 'A Sepolia classroom attendance DApp with signed claims, ERC-20 rewards, and AToken-to-BToken exchange.',
     description: [
-      'This team course project explores how blockchain can connect classroom attendance with a transparent incentive mechanism. Teachers generate signed attendance credentials, and students submit the class ID and signature through the DApp to claim AToken rewards with replay protection.',
-      'My primary responsibility was the frontend DApp implementation: MetaMask connection, teacher/student role-based navigation, token balances, attendance claims, and the two-step approve-and-exchange flow through ethers.js. The deployed Sepolia prototype supports AToken-to-BToken conversion; campus-store redemption remains a future product direction.',
+      'A three-person course project combining signed classroom attendance with an on-chain dual-token reward flow. My primary responsibility was the React DApp frontend, including MetaMask connection, role-based teacher and student views, balance display, attendance claims, token approval, and exchange interactions through ethers.js.',
     ],
     year: '2026',
-    role: 'Frontend DApp Developer · Team Project',
+    role: 'Frontend DApp Developer · Three-person Team Project',
     tags: ['Solidity', 'React', 'ethers.js', 'Hardhat', 'Sepolia'],
-    hierarchy: ['Blockchain', 'Token-based Incentive System', 'Classroom Attendance DApp', 'ERC-20 + Digital Signatures', 'MetaMask frontend + Sepolia contracts + Hardhat tests'],
-    cover: './images/campus-token-cover.svg',
-    gallery: ['./images/campus-token-cover.svg'],
-    links: [
-      { label: 'Launch live DApp', url: 'https://swenwang.github.io/campus/' },
-      { label: 'View repository', url: 'https://github.com/swenwang/campus' },
-    ],
+    hierarchy: ['Blockchain', 'Token Incentive System', 'Classroom Attendance', 'ERC-20 + Digital Signatures', 'React DApp + MetaMask + Sepolia'],
+    cover: '',
+    gallery: [],
+    links: [{ label: 'View GitHub repository', url: 'https://github.com/swenwang/campus' }],
     featured: true,
-  },
-]
+  }]
 
 export const experiences: Experience[] = [
   { title: 'Project Development Officer', organization: 'NCCU FinTech Innovation Lab', period: '2026 — Present', description: 'Supporting project development, organizational systems, and the lab’s website architecture.', type: 'Leadership' },
