@@ -91,7 +91,8 @@ export const projects: Project[] = [
       { label: 'View repository', url: 'https://github.com/swenwang/campus' },
     ],
     featured: true,
-  }]
+  },
+]
 
 export const experiences: Experience[] = [
   { title: 'Project Development Officer', organization: 'NCCU FinTech Innovation Lab', period: '2026 — Present', description: 'Supporting project development, organizational systems, and the lab’s website architecture.', type: 'Leadership' },
