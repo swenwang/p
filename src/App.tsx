@@ -135,7 +135,7 @@ function ProjectDetail() {
 
 function Experience() {
   const { experiences } = usePortfolio()
-  return <Layout><PageIntro eyebrow="Experience · 03" title="Learning by taking responsibility." text="Education, project leadership, competitions, and the communities where I turn plans into shared work."/><section className="section timeline">{experiences.map((e,i)=><article key={e.title}><span>0{i+1}</span><div><p className="kicker">{e.type}</p><h2>{e.title}</h2><b>{e.organization}</b><p>{e.description}</p></div><time>{e.period}</time></article>)}</section></Layout>
+  return <Layout><PageIntro eyebrow="Experience · 03" title="Learning by taking responsibility." text="Education, project leadership, competitions, and the communities where I turn plans into shared work."/><section className="section timeline">{experiences.map((e,i)=><article key={e.title}><span>0{i+1}</span><div><p className="kicker">{e.type}</p><h2>{e.title}</h2><b>{e.organization}</b><p>{e.description}</p></div><div className="experience-side"><time>{e.period}</time>{e.logo&&<img className="experience-logo" src={e.logo} alt={e.logoAlt||`${e.organization} logo`}/>}</div></article>)}</section></Layout>
 }
 
 function Gallery() {
