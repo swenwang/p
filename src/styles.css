@@ -14,3 +14,37 @@
 
 .hero:after,.hero-portrait:before{pointer-events:none}.site-header a,.site-header button,.hero-actions a,.project-card{position:relative;z-index:2}.nav-github{display:flex;align-items:center;gap:6px;border:1px solid var(--blue);border-radius:999px;padding:8px 12px!important;color:var(--blue);font-weight:600}.nav-github:after{display:none}
 @media(max-width:540px){.hero{padding:18vw 6vw 10vw;min-height:auto}.hero h1{font-size:3.7rem}.hero-portrait{width:92%;margin-top:25px}.section{padding:20vw 6vw}.project-meta h3{font-size:2.5rem}.statement blockquote{font-size:2.55rem}.statement-grid{grid-template-columns:1fr}.page-intro{padding:20vw 6vw 14vw}.page-intro h1{font-size:3.8rem}.about-copy h2{font-size:3rem}.timeline article{grid-template-columns:1fr}.timeline article>span,.timeline time{grid-column:1}.gallery-grid{columns:1}.awards-list article{grid-template-columns:1fr}.awards-list img{grid-column:1}.contact-page{padding:20vw 7vw}.contact-page h1{font-size:3.8rem}footer{padding:40px 6vw}.footer-links{flex-direction:column;gap:12px}.setup-card,.login-page form{padding:30px}.admin-title h1{font-size:3rem}}
+
+
+.project-image-placeholder {
+  display: grid;
+  min-height: 22rem;
+  place-items: center;
+  background: linear-gradient(135deg, #173448, #315c75);
+}
+
+.project-placeholder {
+  display: grid;
+  gap: 0.75rem;
+  place-items: center;
+  color: #f7f5ee;
+  text-align: center;
+}
+
+.project-placeholder b {
+  display: grid;
+  width: 5rem;
+  height: 5rem;
+  place-items: center;
+  border: 1px solid rgba(247, 245, 238, 0.45);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  letter-spacing: 0.12em;
+}
+
+.project-placeholder small {
+  color: rgba(247, 245, 238, 0.72);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
