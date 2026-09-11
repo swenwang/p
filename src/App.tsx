@@ -85,7 +85,7 @@ function Home() {
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   return <a href={`#/projects/${project.slug}`} className="project-card">
-    <div className="project-image"><img src={project.cover} alt=""/><span>0{index + 1}</span></div>
+    <div className={`project-image ${project.cover ? '':'project-image-placeholder'}`}>{project.cover ? <img src={project.cover} alt=""/> : <div className="project-placeholder" aria-label={`${project.title} image coming soon`}><b>CT</b><small>Image coming soon</small></div>}<span>0{index + 1}</span></div>
     <div className="project-meta"><p>{project.eyebrow}</p><h3>{project.title}</h3><p>{project.summary}</p><div className="tags">{project.tags.slice(0, 4).map(t => <span key={t}>{t}</span>)}</div></div>
     <ArrowRight className="project-arrow"/>
   </a>
@@ -114,7 +114,7 @@ function ProjectDetail() {
   if (!p) return <Layout><PageIntro eyebrow="404" title="Project not found." text="This project may have moved."/></Layout>
   return <Layout>
     <section className="project-hero"><p className="kicker">{p.eyebrow} · {p.year}</p><h1>{p.title}</h1><p>{p.summary}</p><div className="tags">{p.tags.map(t=><span key={t}>{t}</span>)}</div></section>
-    <section className="project-cover"><img src={p.cover} alt={p.title}/></section>
+    {p.cover&&<section className="project-cover"><img src={p.cover} alt={p.title}/></section>}
     {p.phases?.length&&<section className="section project-phases">
       <div className="phase-intro"><p className="kicker">Project evolution</p><h2>From proposal<br/>to a trained model.</h2><p>One project, developed through two distinct stages.</p></div>
       <div className="phase-list">{p.phases.map((phase, phaseIndex)=><article className="phase" key={phase.step}>
