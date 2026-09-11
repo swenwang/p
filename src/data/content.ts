@@ -72,24 +72,26 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    slug: 'financial-anomaly-detector',
-    title: 'Financial Anomaly Detector',
-    eyebrow: 'Independent Machine Learning Research',
-    summary: 'An unsupervised learning study asking whether transaction patterns can reveal fraud without using labels during training.',
+    slug: 'campus-token-dapp',
+    title: 'Campus Token DApp',
+    eyebrow: 'Blockchain Attendance → Dual-Token Rewards',
+    summary: 'A Sepolia DApp that verifies classroom attendance, issues participation tokens, and converts them into a separate reward token on-chain.',
     description: [
-      'Using the BankSim dataset, this project treats fraud detection as an unsupervised anomaly-detection problem. The work emphasizes careful exploratory analysis, behavior-based features, transparent baselines, and ablation experiments.',
-      'The research compares methods such as Isolation Forest while preserving the fraud label only for final evaluation.',
+      'This team course project explores how blockchain can connect classroom attendance with a transparent incentive mechanism. Teachers generate signed attendance credentials, and students submit the class ID and signature through the DApp to claim AToken rewards with replay protection.',
+      'My primary responsibility was the frontend DApp implementation: MetaMask connection, teacher/student role-based navigation, token balances, attendance claims, and the two-step approve-and-exchange flow through ethers.js. The deployed Sepolia prototype supports AToken-to-BToken conversion; campus-store redemption remains a future product direction.',
     ],
     year: '2026',
-    role: 'Independent Researcher',
-    tags: ['Python', 'Anomaly Detection', 'Isolation Forest', 'BankSim', 'Research Design'],
-    hierarchy: ['Machine Learning', 'Anomaly Detection', 'Financial Transactions', 'Isolation Forest', 'BankSim + behavioral features + evaluation'],
-    cover: './images/profile.jpeg',
-    gallery: [],
-    links: [{ label: 'View repository', url: 'https://github.com/swenwang/financial-anomaly-detector' }],
+    role: 'Frontend DApp Developer · Team Project',
+    tags: ['Solidity', 'React', 'ethers.js', 'Hardhat', 'Sepolia'],
+    hierarchy: ['Blockchain', 'Token-based Incentive System', 'Classroom Attendance DApp', 'ERC-20 + Digital Signatures', 'MetaMask frontend + Sepolia contracts + Hardhat tests'],
+    cover: './images/campus-token-cover.svg',
+    gallery: ['./images/campus-token-cover.svg'],
+    links: [
+      { label: 'Launch live DApp', url: 'https://swenwang.github.io/campus/' },
+      { label: 'View repository', url: 'https://github.com/swenwang/campus' },
+    ],
     featured: true,
-  },
-]
+  }]
 
 export const experiences: Experience[] = [
   { title: 'Project Development Officer', organization: 'NCCU FinTech Innovation Lab', period: '2026 — Present', description: 'Supporting project development, organizational systems, and the lab’s website architecture.', type: 'Leadership' },
