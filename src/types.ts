@@ -29,6 +29,8 @@ export type Experience = {
   period: string
   description: string
   type: 'Leadership' | 'Research' | 'Competition' | 'Education'
+  logo?: string
+  logoAlt?: string
 }
 
 export type Award = {
